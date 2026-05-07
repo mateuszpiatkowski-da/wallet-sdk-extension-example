@@ -15,7 +15,7 @@
   "type": "module",
   "main": "index.ts",
   "scripts": {
-    "generate:daml": "dpm ...",
+    "generate:codegen": "rm -rf ./src/codegen && ./scripts/generate-codegen.sh && for dir in ./src/codegen/*/; do (cd \"$dir\" && bun install); done",
     "dev": "bun --watch index.ts"
   },
   "dependencies": {

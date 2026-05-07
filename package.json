@@ -1,0 +1,31 @@
+{
+  "name": "wallet-sdk-utilities-extension",
+  "version": "1.0.0",
+  "description": "wallet-sdk extension for dApps",
+  "homepage": "https://github.com/mateuszpiatkowski-da/wallet-sdk-utilities-extension#readme",
+  "bugs": {
+    "url": "https://github.com/mateuszpiatkowski-da/wallet-sdk-utilities-extension/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mateuszpiatkowski-da/wallet-sdk-utilities-extension.git"
+  },
+  "license": "MIT",
+  "author": "Mateusz Piątkowski <mateusz.piatkowski@digitalassset.com>",
+  "type": "module",
+  "main": "index.ts",
+  "scripts": {
+    "generate:daml": "dpm ...",
+    "dev": "bun --watch index.ts"
+  },
+  "dependencies": {
+    "@canton-network/wallet-sdk": "^1.1.0"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.3.13"
+  },
+  "private": true,
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}

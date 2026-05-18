@@ -19,7 +19,8 @@
     "dev": "bun --watch index.ts"
   },
   "dependencies": {
-    "@canton-network/wallet-sdk": "^1.2.1"
+    "@canton-network/core-provider-ledger": "^1.2.3",
+    "@canton-network/wallet-sdk": "link:@canton-network/wallet-sdk"
   },
   "devDependencies": {
     "@types/bun": "^1.3.14"

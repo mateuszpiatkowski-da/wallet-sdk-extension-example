@@ -10,8 +10,17 @@ latest_dars=$(
   ls "$DAR_DIR"/*.dar 2>/dev/null | 
   grep -v "Terms" |
   sed 's|.*/||' |  # Get basename
-  sort -t'-' -k1,1 -k2,2V |  # Sort by package name and version
-  awk -F'-v' '{pkg=$1} pkg!=prev {print; prev=pkg}' RS='\n'
+  sort -V |  # Version sort the entire filename
+  awk -F'-v' '{
+    pkg = $1
+    latest[pkg] = $0
+  }
+  END {
+    for (pkg in latest) {
+      print latest[pkg]
+    }
+  }' |
+  sort
 )
 
 echo "$latest_dars"

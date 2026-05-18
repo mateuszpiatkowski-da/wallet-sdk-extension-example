@@ -15,3 +15,9 @@ const sdk = SDK.create({
   auth,
   ledgerClientUrl: localNetStaticConfig.LOCALNET_APP_USER_LEDGER_URL,
 });
+
+const utilities = {
+  commands: {
+    transfer: {},
+  },
+};

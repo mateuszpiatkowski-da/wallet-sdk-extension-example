@@ -16,7 +16,7 @@
   "main": "index.ts",
   "scripts": {
     "generate:codegen": "rm -rf ./src/codegen && ./scripts/generate-codegen.sh && for dir in ./src/codegen/*/; do (cd \"$dir\" && bun install); done",
-    "dev": "bun --watch index.ts"
+    "dev": "bun test --watch"
   },
   "dependencies": {
     "@canton-network/core-provider-ledger": "^1.2.3",

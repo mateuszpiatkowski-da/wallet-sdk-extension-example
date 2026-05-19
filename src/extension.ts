@@ -1,10 +1,12 @@
-import { SDKPlugin, type PreparedCommand } from '@canton-network/wallet-sdk';
+import { SDKPlugin, type PreparedCommand, type SDKContext } from '@canton-network/wallet-sdk';
 import { Utility } from './codegen/utility-registry-app-v0-0.7.0/lib';
 import type { Ops } from '@canton-network/core-provider-ledger';
 
+export const WalletSDKUtilitiesPluginName = 'utilities';
+
 export class WalletSDKUtilitiesPlugin extends SDKPlugin {
-  constructor() {
-    super('utilities');
+  constructor(protected override readonly ctx: SDKContext) {
+    super(WalletSDKUtilitiesPluginName, ctx);
   }
 
   public preapprovalTransfer = {

@@ -1,7 +1,7 @@
 {
   "name": "wallet-sdk-extension-example",
   "version": "1.0.0",
-  "description": "wallet-sdk extension for dApps",
+  "description": "wallet-sdk example extension",
   "homepage": "https://github.com/mateuszpiatkowski-da/wallet-sdk-extension-example#readme",
   "bugs": {
     "url": "https://github.com/mateuszpiatkowski-da/wallet-sdk-extension-example/issues"

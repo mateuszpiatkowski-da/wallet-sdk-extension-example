@@ -2,18 +2,17 @@
   "name": "wallet-sdk-utilities-extension",
   "version": "1.0.0",
   "description": "wallet-sdk extension for dApps",
-  "homepage": "https://github.com/mateuszpiatkowski-da/wallet-sdk-utilities-extension#readme",
+  "homepage": "https://github.com/mateuszpiatkowski-da/wallet-sdk-extension-example#readme",
   "bugs": {
-    "url": "https://github.com/mateuszpiatkowski-da/wallet-sdk-utilities-extension/issues"
+    "url": "https://github.com/mateuszpiatkowski-da/wallet-sdk-extension-example/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mateuszpiatkowski-da/wallet-sdk-utilities-extension.git"
+    "url": "git+https://github.com/mateuszpiatkowski-da/wallet-sdk-extension-example.git"
   },
   "license": "MIT",
   "author": "Mateusz Piątkowski <mateusz.piatkowski@digitalassset.com>",
   "type": "module",
-  "main": "index.ts",
   "scripts": {
     "generate:codegen": "rm -rf ./src/codegen && ./scripts/generate-codegen.sh && for dir in ./src/codegen/*/; do (cd \"$dir\" && bun install); done",
     "dev": "bun test --watch"

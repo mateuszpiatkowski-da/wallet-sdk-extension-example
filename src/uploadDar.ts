@@ -1,14 +1,20 @@
 import type { SDKInterface } from '@canton-network/wallet-sdk';
-import { $ } from 'bun';
+import { execa } from 'execa';
 import path from 'path';
 import fs from 'fs/promises';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 
-const scriptsDir = path.join(import.meta.dir, '..', 'scripts');
-const darDir = path.join(import.meta.dir, '..', 'dar');
-const codegenDir = path.join(import.meta.dir, 'codegen');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+const scriptsDir = path.join(__dirname, '..', 'scripts');
+const darDir = path.join(__dirname, '..', 'dar');
+const codegenDir = path.join(__dirname, 'codegen');
 const latestDarsScript = path.join(scriptsDir, 'latest-dars.sh');
 
-const latestDars = $`bash ${latestDarsScript}`.lines();
+const latestDarsResult = await execa('bash', [latestDarsScript]);
+const latestDars = latestDarsResult.stdout.split('\n');
 
 const availableDars: Record<
   string,

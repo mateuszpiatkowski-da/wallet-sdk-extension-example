@@ -13,9 +13,12 @@
   "license": "MIT",
   "author": "Mateusz Piątkowski <mateusz.piatkowski@digitalassset.com>",
   "type": "module",
+  "main": "index.ts",
   "scripts": {
     "generate:codegen": "rm -rf ./src/codegen && ./scripts/generate-codegen.sh && for dir in ./src/codegen/*/; do (cd \"$dir\" && bun install); done",
-    "dev": "bun test --watch"
+    "dev": "bun test --watch",
+    "build": "rm -rf ./dist && bun build ./index.ts --outdir ./dist --sourcemap=external --minify",
+    "postinstall": "bun generate:codegen"
   },
   "dependencies": {
     "@canton-network/core-provider-ledger": "^1.2.3",

@@ -18,18 +18,15 @@ The example implementation focuses on **Transfer Preapproval** functionality fro
 
 ## Requirements
 
-- **Bun**: ≥1.0.0 (runtime and package manager)
-- **Node.js**: ≥18.0.0 (for compatibility)
+- **Yarn**: ≥4.0.0 (package manager)
+- **Node.js**: ≥18.0.0 (runtime)
 - **DPM** (Daml Package Manager): Required for generating TypeScript code from DAR files
 
 ## Installation
 
 ```bash
-# Install dependencies
-bun install
-
-# Generate TypeScript code from DAR files
-bun run generate:codegen
+# Install dependencies && generate codegen from DAR files
+yarn install
 ```
 
 ## Project Structure
@@ -56,8 +53,8 @@ wallet-sdk-utilities-extension/
 
 ### Scripts
 
-- **`bun run generate:codegen`** - Regenerate TypeScript code from the latest DAR versions
-- **`bun run dev`** - Run tests in watch mode during development
+- **`yarn generate:codegen`** - Regenerate TypeScript code from the latest DAR versions
+- **`yarn dev`** - Run tests in watch mode during development
 
 ### Code Generation Workflow
 
@@ -72,8 +69,8 @@ The project uses a versioned DAR approach:
 
 ```bash
 # Run tests once
-bun test
+yarn test
 
 # Watch mode (for development)
-bun run dev
+yarn dev
 ```

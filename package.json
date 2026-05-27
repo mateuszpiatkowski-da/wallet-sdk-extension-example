@@ -15,7 +15,7 @@
   "type": "module",
   "main": "index.ts",
   "scripts": {
-    "generate:codegen": "rm -rf ./src/codegen && ./scripts/generate-codegen.sh && for dir in ./src/codegen/*/; do (cd \"$dir\" && yarn install); done",
+    "generate:codegen": "rm -rf ./src/codegen && ./scripts/generate-codegen.sh && for dir in ./src/codegen/*/; do cd \"$dir\" && yarn install && cd -; done",
     "test": "vitest",
     "test:watch": "vitest --watch",
     "dev": "yarn test:watch",
